@@ -29,8 +29,6 @@ pipeline {
     
     stage ('Source Composition Analysis') {
       steps {
-         echo "PATH =Swasti"
-        // sh -c "echo This is a test string"
           echo "PATH =Swasti 2"
          sh 'rm owasp* || true'
          sh 'wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh" '
