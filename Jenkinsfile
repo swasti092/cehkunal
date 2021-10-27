@@ -31,8 +31,11 @@ pipeline {
       steps {
           echo "PATH =Swasti 2"
          sh 'rm owasp* || true'
+         echo "PATH =Swasti 3"
          sh 'wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh" '
+        echo "PATH =Swasti 4"
          sh 'chmod +x owasp-dependency-check.sh'
+        echo "PATH =Swasti 5"
          sh 'bash owasp-dependency-check.sh'
          sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
         
