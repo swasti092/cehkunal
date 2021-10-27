@@ -10,7 +10,7 @@ pipeline {
         //export GIT_HOME="C://Program Files//Git"
         //export PATH='%GIT_HOME%/bin;%PATH%'
         echo "PATH = ${PATH}"
-        sh
+       
         echo "M2_HOME = ${M2_HOME}"
         /* sh  
                     echo "PATH = ${PATH}"
@@ -29,6 +29,9 @@ pipeline {
     
     stage ('Source Composition Analysis') {
       steps {
+         echo "PATH =Swasti"
+         sh -c "echo This is a test string"
+          echo "PATH =Swasti 2"
          sh 'rm owasp* || true'
          sh 'wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh" '
          sh 'chmod +x owasp-dependency-check.sh'
