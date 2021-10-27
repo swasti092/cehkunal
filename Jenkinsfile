@@ -1,9 +1,6 @@
 pipeline {
   agent any
-  environment {
-    PATH = "C://Program Files//Git//bit:$PATH"
-    echo "PATH--- = ${PATH}"
-  }
+  
   tools {
     maven 'Maven'
   }
