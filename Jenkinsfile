@@ -6,8 +6,8 @@ pipeline {
   stages {
     stage ('Initialize') {
       steps {
-        export GIT_HOME="C://Program Files//Git"
-        export PATH=${GIT_HOME}/bin:${PATH}
+        GIT_HOME="C://Program Files//Git"
+        PATH='%GIT_HOME%/bin;%PATH%'
         echo "PATH = ${PATH}"
         echo "M2_HOME = ${M2_HOME}"
         ''' sh  
