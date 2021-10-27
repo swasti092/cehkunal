@@ -36,8 +36,8 @@ pipeline {
         echo "PATH =Swasti 4"
          shell 'chmod +x owasp-dependency-check.sh'
         echo "PATH =Swasti 5"
-         sh 'bash owasp-dependency-check.sh'
-         sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
+         shell 'bash owasp-dependency-check.sh'
+         shell 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
         
       }
     }
@@ -53,7 +53,7 @@ pipeline {
     
     stage ('Build') {
       steps {
-      sh 'mvn clean package'
+      shell 'mvn clean package'
        }
     }
     
