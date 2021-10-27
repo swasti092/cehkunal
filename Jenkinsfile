@@ -30,7 +30,7 @@ pipeline {
     stage ('Source Composition Analysis') {
       steps {
           echo "PATH =Swasti 2"
-        chmod -R 777 "/var/jenkins_home/"
+        chmod -R 777 ${HOME}
         sh 'rm owasp* || true'
          echo "PATH =Swasti 3"
          sh 'wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh" '
