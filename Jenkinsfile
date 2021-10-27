@@ -30,14 +30,14 @@ pipeline {
     stage ('Source Composition Analysis') {
       steps {
           echo "PATH =Swasti 2"
-         shell 'rm owasp* || true'
+         sh 'rm owasp* || true'
          echo "PATH =Swasti 3"
-         shell 'wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh" '
+         sh 'wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh" '
         echo "PATH =Swasti 4"
-         shell 'chmod +x owasp-dependency-check.sh'
+         sh 'chmod +x owasp-dependency-check.sh'
         echo "PATH =Swasti 5"
-         shell 'bash owasp-dependency-check.sh'
-         shell 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
+         sh 'bash owasp-dependency-check.sh'
+         sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
         
       }
     }
