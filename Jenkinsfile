@@ -15,7 +15,6 @@ pipeline {
           sh '''
         
           '''
-     
           echo "PATH1111 = ${PATH}"
         
       }
@@ -29,44 +28,20 @@ pipeline {
          sh 'chmod +x owasp-dependency-check.sh'
          echo "PATH =Swasti 5"
          /*sh 'bash owasp-dependency-check.sh'*/
-        /*sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --help'*/
-         sh 'bash dependency-check.sh -v'
+         sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --help'
          //sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
         
       }
     }
     
-   /* stage ('SAST') {
-      steps {
-        withSonarQubeEnv('sonar') {
-          sh 'mvn sonar:sonar'
-          sh 'cat target/sonar/report-task.txt'
-        }
-      }
-   } */
+ 
     
     stage ('Build') {
       steps {
       sh 'mvn clean package'
        }
     }
-    
-    /* stage ('Deploy-To-Tomcat') {
-            steps {
-           sshagent(['tomcat']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@13.232.202.25:/prod/apache-tomcat-8.5.39/webapps/webapp.war'
-              }      
-           }       
-    } */
-    
-    
-    /* stage ('DAST') {
-      steps {
-        sshagent(['zap']) {
-         sh 'ssh -o  StrictHostKeyChecking=no ubuntu@13.232.158.44 "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://13.232.202.25:8080/webapp/" || true'
-        }
-      }
-    } */
+
     
   }
 }
