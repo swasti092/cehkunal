@@ -31,7 +31,7 @@ pipeline {
          /*sh 'bash owasp-dependency-check.sh'*/
         /*sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --help'*/
          sh 'bash dependency-check.sh -v'
-         sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
+         //sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
         
       }
     }
