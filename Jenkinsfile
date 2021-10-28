@@ -12,11 +12,11 @@ pipeline {
         echo "PATH = ${PATH}"
        
         echo "M2_HOME = ${M2_HOME}"
-        withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']){
+       
           sh '''
         
           '''
-        }
+     
                  echo "PATH1111 = ${PATH}"
         /* sh  
                     echo "PATH = ${PATH}"
