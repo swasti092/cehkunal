@@ -6,17 +6,12 @@ pipeline {
   }
   stages {
     stage ('Initialize') {
-      steps {
-        
+      steps { 
         echo "PATH = ${PATH}"
-       
         echo "M2_HOME = ${M2_HOME}"
-       
           sh '''
         
-          '''
-          echo "PATH1111 = ${PATH}"
-        
+          '''      
       }
     }
      
@@ -28,6 +23,7 @@ pipeline {
          sh 'chmod +x owasp-dependency-check.sh'
          echo "PATH =Swasti 5"
          /*sh 'bash owasp-dependency-check.sh'*/
+         echo "PWDDDDDDDD = ${pwd}"
          sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --help'
          //sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
         
@@ -36,11 +32,11 @@ pipeline {
     
  
     
-    stage ('Build') {
+   /* stage ('Build') {
       steps {
       sh 'mvn clean package'
        }
-    }
+    }*/
 
     
   }
