@@ -7,8 +7,7 @@ pipeline {
   stages {
     stage ('Initialize') {
       steps {
-        //export GIT_HOME="C://Program Files//Git"
-        //export PATH='%GIT_HOME%/bin;%PATH%'
+        
         echo "PATH = ${PATH}"
        
         echo "M2_HOME = ${M2_HOME}"
@@ -17,34 +16,21 @@ pipeline {
         
           '''
      
-                 echo "PATH1111 = ${PATH}"
-        /* sh  
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-            */
+          echo "PATH1111 = ${PATH}"
+        
       }
     }
-    
-    /*stage ('Check-Git-Secrets') {
-      steps {
-        sh 'rm trufflehog || true'
-        sh 'docker run gesellix/trufflehog --json https://github.com/cehkunal/webapp.git > trufflehog'
-        sh 'cat trufflehog'
-      }
-    }*/
-    
+     
     stage ('Source Composition Analysis') {
       steps {
-          echo "PATH =Swasti 2"
-       
-        /*sh 'rm owasp* || true'*/
-         echo "PATH =Swasti 3"
+         
          sh 'wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh" '
-        echo "PATH =Swasti 4"
+         echo "PATH =Swasti 4"
          sh 'chmod +x owasp-dependency-check.sh'
-        echo "PATH =Swasti 5"
+         echo "PATH =Swasti 5"
          /*sh 'bash owasp-dependency-check.sh'*/
-        sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --help'
+        /*sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --help'*/
+         sh 'bash dependency-check.sh -v'
          sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
         
       }
@@ -61,7 +47,7 @@ pipeline {
     
     stage ('Build') {
       steps {
-      shell 'mvn clean package'
+      sh 'mvn clean package'
        }
     }
     
