@@ -23,9 +23,9 @@ pipeline {
          sh 'chmod +x owasp-dependency-check.sh'
          echo "PATH =Swasti 5"
          /*sh 'bash owasp-dependency-check.sh'*/
-         echo "$WORKSPACE = ${WORKSPACE}"
-         sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --help'
-         //sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
+         echo "WORKSPACE = ${WORKSPACE}"
+         sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --scan ${WORKSPACE}/src -f ALL -o ${WORKSPACE} --project "owasp-dependency-check" \ '
+         sh 'cat ${WORKSPACE}/owasp-dependency-check.xml'
         
       }
     }
