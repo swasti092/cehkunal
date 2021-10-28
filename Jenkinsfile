@@ -25,8 +25,8 @@ pipeline {
          /*sh 'bash owasp-dependency-check.sh'*/
          echo "WORKSPACE = ${WORKSPACE}"
        /* sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --purge'*/
-         sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --scan ${WORKSPACE}/src -f ALL -o ${WORKSPACE}/owasp-dependency-check --project "owasp-dependency-check" '
-         sh 'cat ${WORKSPACE}/owasp-dependency-check.xml'
+         sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --scan ${WORKSPACE}/src -f xml -o ${WORKSPACE}/ --project "owasp-dependency-check" '
+         sh 'cat ${WORKSPACE}/dependency-check-report.xml.xml'
         
       }
     }
