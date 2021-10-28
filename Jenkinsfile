@@ -12,9 +12,9 @@ pipeline {
         echo "PATH = ${PATH}"
        
         echo "M2_HOME = ${M2_HOME}"
-        withEnv({'PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']){
+        withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']){
           sh '''
-          wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh"
+         sh 'wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh" '
           '''
         }
                  echo "PATH1111 = ${PATH}"
