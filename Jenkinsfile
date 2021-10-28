@@ -39,7 +39,7 @@ pipeline {
        
         /*sh 'rm owasp* || true'*/
          echo "PATH =Swasti 3"
-         sh '/usr/bin/wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh" '
+         sh 'wget "https://raw.githubusercontent.com/cehkunal/webapp/master/owasp-dependency-check.sh" '
         echo "PATH =Swasti 4"
          sh 'chmod +x owasp-dependency-check.sh'
         echo "PATH =Swasti 5"
