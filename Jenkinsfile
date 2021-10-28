@@ -25,7 +25,7 @@ pipeline {
          /*sh 'bash owasp-dependency-check.sh'*/
          echo "WORKSPACE = ${WORKSPACE}"
        /* sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --purge'*/
-         sh 'chmod -R a+rwx /var/jenkins_home'
+         sh 'chmod -R 777 /var/jenkins_home'
          sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --scan ${WORKSPACE}/src -f ALL -o ${WORKSPACE} --project "owasp-dependency-check" '
          sh 'cat ${WORKSPACE}/owasp-dependency-check.xml'
         
