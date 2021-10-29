@@ -24,20 +24,17 @@ pipeline {
          echo "PATH =Swasti 5"
          /*sh 'bash owasp-dependency-check.sh'*/
          echo "WORKSPACE = ${WORKSPACE}"
-       /* sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --purge'*/
          sh 'bash /var/jenkins_home/dependency-check/bin/dependency-check.sh --scan ${WORKSPACE}/src -f XML -o ${WORKSPACE}/ --project "owasp-dependency-check" '
          sh 'cat ${WORKSPACE}/dependency-check-report.xml'
         
       }
     }
     
- 
-    
-   /* stage ('Build') {
+    stage ('Build') {
       steps {
       sh 'mvn clean package'
        }
-    }*/
+    }
 
     
   }
